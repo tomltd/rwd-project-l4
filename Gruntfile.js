@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     pagespeed: {
   options: {
     nokey: true,
-    url: "http://tomfreestone.co.uk"
+    url: "http://tomfreestone.co.uk/udacity/1/"
   },
   prod: {
     options: {
