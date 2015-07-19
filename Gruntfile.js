@@ -48,10 +48,24 @@ module.exports = function(grunt) {
     }
   }
 },
+
+cssmin: {
+  target: {
+    files: [{
+      expand: true,
+      cwd: 'css',
+      src: ['*.css', '!*.min.css'],
+      dest: 'css',
+      ext: '.min.css'
+    }]
+  }
+}
+
   });
 
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-pagespeed');
-  grunt.registerTask('default', ['responsive_images']);
+  grunt.registerTask('default', ['responsive_images', 'cssmin']);
 
 };
